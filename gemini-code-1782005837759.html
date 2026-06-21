@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manicure y Pedicure by Pauly | Glamour & Nail Art</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/confetti.css">
+    
+    <style>
+        :root {
+            --oro-glam: #d4af37;
+            --rosa-premium: #ff409f;
+            --rosa-pastel: #fff0f6;
+            --fucsia-profundo: #4a0026;
+            --blanco-puro: #ffffff;
+            --negro-elegante: #1a1a1a;
+            --gris-bloqueado: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--rosa-pastel);
+            color: var(--negro-elegante);
+            line-height: 1.7;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23ffb6c1' fill-opacity='0.15'%3E%3Cpath d='M40 0l-3 20-17-11 11 17-20-3 20 3-11 17 17-11 3 20 3-20 17 11-11-17 20 3-20-3 11-17-17 11z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        header {
+            background: linear-gradient(rgba(74, 0, 38, 0.6), rgba(26, 26, 26, 0.8)), 
+                        url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1200&auto=format&fit=crop') no-repeat center center/cover;
+            color: var(--blanco-puro);
+            padding: 120px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--oro-glam);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 15px rgba(255, 64, 159, 0.6);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffd7e9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 60px auto 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 45px;
+            margin-bottom: 50px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(74, 0, 38, 0.06);
+            border: 1px solid rgba(214, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--rosa-premium), var(--oro-glam));
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--fucsia-profundo);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .historia-destacada {
+            background: linear-gradient(135deg, #fff5fa, #fff);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--oro-glam);
+            margin-top: 20px;
+        }
+
+        .historia-destacada h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--rosa-premium);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .salon-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap-reverse;
+        }
+
+        .salon-img-box {
+            flex: 1;
+            min-width: 320px;
+            text-align: center;
+        }
+
+        .salon-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 550px;
+            border-radius: 20px;
+            border: 3px solid var(--oro-glam);
+            box-shadow: 0 15px 30px rgba(74, 0, 38, 0.15);
+        }
+
+        .salon-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .salon-details ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .salon-details ul li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .salon-details ul li i {
+            color: var(--rosa-premium);
+            font-size: 1.2rem;
+        }
+
+        .instagram-banner {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a, #4a0026);
+            color: var(--blanco-puro);
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.4s ease;
+            border: 2px solid var(--oro-glam);
+        }
+
+        .instagram-banner:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 64, 159, 0.3);
+        }
+
+        .instagram-banner i {
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .instagram-banner h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--oro-glam);
+            margin-bottom: 12px;
+        }
+
+        .booking-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .booking-wrapper { grid-template-columns: 1fr; }
+        }
+
+        .calendar-box {
+            background: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .blocks-container {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .time-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .time-block {
+            padding: 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .time-block:hover:not(.occupied) {
+            border-color: var(--rosa-premium);
+            color: var(--rosa-premium);
+            background: #fff0f6;
+        }
+
+        .time-block.selected {
+            background: linear-gradient(135deg, var(--fucsia-profundo), var(--rosa-premium));
+            color: #fff;
+            border-color: var(--oro-glam);
+            box-shadow: 0 5px 15px rgba(255, 64, 159, 0.3);
+        }
+
+        .time-block.occupied {
+            background-color: var(--gris-bloqueado) !important;
+            color: #888 !important;
+            border-color: #ccc !important;
+            cursor: not-allowed !important;
+            text-decoration: line-through !important;
+            opacity: 0.6;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--fucsia-profundo);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1.5px solid #e1e1e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+            background-color: #fafafa;
+        }
+
+        input:focus {
+            border-color: var(--rosa-premium);
+            background-color: var(--blanco-puro);
+        }
+
+        .btn-agenda {
+            background: linear-gradient(135deg, var(--fucsia-profundo), var(--rosa-premium));
+            color: var(--blanco-puro);
+            border: none;
+            padding: 18px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            border: 1px solid var(--oro-glam);
+            margin-top: 25px;
+        }
+
+        .btn-agenda:hover:not(:disabled) {
+            background: linear-gradient(135deg, var(--rosa-premium), var(--fucsia-profundo));
+            letter-spacing: 3px;
+            box-shadow: 0 8px 20px rgba(74, 0, 38, 0.3);
+        }
+
+        .cancel-box {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #ffccd5;
+        }
+
+        .btn-cancelar {
+            background: #da1212;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        .btn-cancelar:hover {
+            background: #a00c0c;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 40px;
+            right: 40px;
+            background: linear-gradient(135deg, #25d366, #128C7E);
+            color: var(--blanco-puro);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--blanco-puro);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .floral-deco {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--oro-glam);
+            margin: 20px 0;
+            letter-spacing: 5px;
+        }
+
+        footer {
+            background-color: var(--negro-elegante);
+            color: #a6a6a6;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+            border-top: 3px solid var(--oro-glam);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Manicure y Pedicure by Pauly</h1>
+        <p>Alta costura, brillo y sofisticación para tus uñas</p>
+    </header>
+
+    <div class="container">
+
+        <section id="quienes-somos">
+            <h2>Nuestra Esencia</h2>
+            <div class="story-container">
+                <div class="story-text">
+                    <p>En <strong>Manicure y Pedicure by Pauly</strong> redefinimos el concept de belleza. No somos un salón tradicional; somos un santuario de moda, lujo y rejuvenecimiento diseñado exclusivamente para la mujer moderna que pisa fuerte y brilla con luz propia.</p>
+                    <div class="historia-destacada">
+                        <h3>Nuestra Increíble Historia ✨</h3>
+                        <p>Todo comenzó cuando Pauly, nuestra fundadora, viajó al extranjero para una prestigiosa gala de moda. Horas antes del evento, un desastroso accidente con un esmalte convencional arruinó por completo sus uñas y su vestido. Lejos de rendirse, combinó químicamente extractos botánicos de emergencia y pigmentos puros que encontró en un taller de arte local. El resultado fue un esmalte fosforescente e indestructible que terminó robándose las miradas de todos los diseñadores de la noche. Tras ser perseguida por fotógrafos que querían saber el secreto de sus manos, Pauly decidió regresar y fundar este salón. Hoy, esa misma fórmula secreta y esa pasión por el rescate de emergencia es lo que aplicamos en cada clienta que busca un cambio radical y perfecto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="floral-deco">🌸 ✧ ✦ ✧ 🌸</div>
+
+        <section id="el-salon">
+            <h2>Nuestro Espacio Glam</h2>
+            <div class="salon-container">
+                <div class="salon-img-box">
+                    <img src="1000089721.png" alt="Estación de Manicure by Pauly" class="salon-img">
+                </div>
+                <div class="salon-details">
+                    <p>Te invitamos a relajarte en nuestra exclusiva estación de atención personalizada. Cada rincón ha sido diseñado detalladamente bajo una atmósfera de luces de neón rosa y acabados elegantes para brindarte una experiencia totalmente premium.</p>
+                    <ul>
+                        <li><i class="fas fa-mug-hot"></i> <strong>Cortesía Exclusiva:</strong> Disfruta de un delicioso café premium, jugo natural o agua purificada durante tu atención.</li>
+                        <li><i class="fas fa-check-circle"></i> Sillas de terciopelo premium ultra cómodas.</li>
+                        <li><i class="fas fa-check-circle"></i> Iluminación focalizada para acabados perfectos.</li>
+                        <li><i class="fas fa-check-circle"></i> Máxima higiene y herramientas esterilizadas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="floral-deco">🌸 ✧ ✦ ✧ 🌸</div>
+
+        <section id="trabajos">
+            <h2>Nuestra Galería de Arte</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-style: italic;">Cada set es una obra maestra. Descubre los acabados en cristales, efectos espejo y diseños florales que marcan tendencia.</p>
+            <a href="https://www.instagram.com/manicureypedicureee?igsh=MXJ1OHRjaXI5aXR2bg==" target="_blank" class="instagram-banner">
+                <i class="fab fa-instagram"></i>
+                <h3>Explora el Instagram Oficial</h3>
+                <p>Haz clic para ver nuestro portafolio de lujo exclusivo y unirte a nuestra comunidad de reinas.</p>
+            </a>
+        </section>
+
+        <div class="floral-deco">🌸 ✧ ✦ ✧ 🌸</div>
+
+        <section id="agendamiento">
+            <h2>Reserva tu Experiencia VIP</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Interactúa con nuestro calendario, elige tu día preferido y selecciona tu bloque horario exclusivo.</p>
+            
+            <form id="form-agenda">
+                <div class="booking-wrapper">
+                    
+                    <div>
+                        <div class="form-group">
+                            <label for="nombre">Nombre de la Clienta:</label>
+                            <input type="text" id="nombre" placeholder="Ej. Valentina Larraín" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono de Contacto:</label>
+                            <input type="tel" id="telefono" placeholder="Ej. +56912345678" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" id="correo" placeholder="Ej. valentina@correo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha-input">1. Elige la Fecha:</label>
+                            <input type="text" id="fecha-input" placeholder="Haz clic para abrir el calendario ➔" required readonly>
+                        </div>
+                    </div>
+
+                    <div class="calendar-box">
+                        <div id="blocks-section" class="blocks-container">
+                            <label>2. Selecciona tu Bloque de 2 Horas:</label>
+                            <div class="time-grid">
+                                <div class="time-block" id="block-1" data-time="09:00 a 11:00">
+                                    <i class="far fa-clock"></i> Mañana Radiante<br><small>09:00 AM a 11:00 AM</small>
+                                </div>
+                                <div class="time-block" id="block-2" data-time="11:00 a 13:00">
+                                    <i class="far fa-sun"></i> Mediodía de Glamour<br><small>11:00 AM a 01:00 PM</small>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="placeholder-text" style="color: #999; text-align: center; padding: 50px 10px; font-style: italic;">Por favor, selecciona una fecha a la izquierda primero para desplegar los bloques horarios disponibles.</p>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn-agenda" id="submit-btn">Agendar Cita de Lujo vía WhatsApp</button>
+            </form>
+        </section>
+
+        <div class="floral-deco">🌸 ✧ ✦ ✧ 🌸</div>
+
+        <section id="cancelaciones">
+            <h2>Gestionar Mi Cita</h2>
+            <p style="text-align: center; margin-bottom: 20px;">¿Surgió un imprevisto? Libera tu bloque ingresando el código enviado a tu correo electrónico.</p>
+            <div class="cancel-box">
+                <div class="form-group" style="text-align: left;">
+                    <label for="codigo-cancelar">Código de tu Reserva:</label>
+                    <input type="text" id="codigo-cancelar" placeholder="Ej. 14">
+                </div>
+                <button type="button" class="btn-cancelar" id="cancel-btn">Cancelar Reserva Inmediatamente</button>
+            </div>
+        </section>
+
+    </div>
+
+    <a href="https://wa.me/56932395480?text=Hola%20Pauly!%20Me%20gustaría%20hacer%20una%20consulta%20VIP%20sobre%20tus%20servicios%20de%20uñas." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>✨ &copy; 2026 Manicure y Pedicure by Pauly | Exclusividad en tus Manos ✨</p>
+        <p style="font-size: 0.75rem; margin-top: 10px; color: #666;">Santiago, Chile</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+    <script>
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDaMjPQR5nu7Lepr-Wg5WwVoWu5qPtt9ll4luOSFL-fBCtIJyIK4DedpWcZ1CUn50Yiw/exec"; 
+
+        let bloqueSeleccionado = "";
+        let listaReservasOcupadas = [];
+
+        function normalizarFecha(str) {
+            if (!str) return "";
+            return str.toString().trim().replace(/\//g, "-");
+        }
+
+        function cargarHorasOcupadas() {
+            const antiguoScript = document.getElementById('jsonp-script');
+            if (antiguoScript) antiguoScript.remove();
+
+            window.procesarDatosGoogle = function(data) {
+                listaReservasOcupadas = data;
+                const fechaActual = document.getElementById('fecha-input').value;
+                if (fechaActual) {
+                    verificarBloquesDisponibles(fechaActual);
+                }
+            };
+
+            const script = document.createElement('script');
+            script.id = 'jsonp-script';
+            script.src = GOOGLE_SCRIPT_URL + "?callback=procesarDatosGoogle&_ts=" + new Date().getTime();
+            document.body.appendChild(script);
+        }
+        
+        cargarHorasOcupadas();
+
+        flatpickr("#fecha-input", {
+            locale: "es",
+            minDate: "today",
+            dateFormat: "d-m-Y",
+            disable: [
+                function(date) { return (date.getDay() === 0 || date.getDay() === 6); }
+            ],
+            onChange: function(selectedDates, dateStr) {
+                document.getElementById('placeholder-text').style.display = 'none';
+                document.getElementById('blocks-section').style.display = 'block';
+                verificarBloquesDisponibles(dateStr);
+            }
+        });
+
+        function verificarBloquesDisponibles(fechaSeleccionada) {
+            const bloquesElem = document.querySelectorAll('.time-block');
+            
+            bloquesElem.forEach(b => {
+                b.classList.remove('occupied', 'selected');
+            });
+            bloqueSeleccionado = "";
+
+            listaReservasOcupadas.forEach(reserva => {
+                if (normalizarFecha(reserva.fecha) === normalizarFecha(fechaSeleccionada)) {
+                    const bloqueOcupadoTexto = reserva.bloque.toString().trim();
+                    
+                    if (bloqueOcupadoTexto === "09:00 a 11:00") {
+                        document.getElementById('block-1').classList.add('occupied');
+                    }
+                    if (bloqueOcupadoTexto === "11:00 a 13:00") {
+                        document.getElementById('block-2').classList.add('occupied');
+                    }
+                }
+            });
+        }
+
+        const bloquesClick = document.querySelectorAll('.time-block');
+        bloquesClick.forEach(bloque => {
+            bloque.addEventListener('click', function() {
+                if (this.classList.contains('occupied')) return; 
+                
+                bloquesClick.forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                bloqueSeleccionado = this.getAttribute('data-time');
+            });
+        });
+
+        document.getElementById('form-agenda').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const correo = document.getElementById('correo').value;
+            const fecha = document.getElementById('fecha-input').value;
+            const btnSubmit = document.getElementById('submit-btn');
+            
+            if(!bloqueSeleccionado) {
+                alert("Por favor, selecciona un bloque horario disponible.");
+                return;
+            }
+
+            btnSubmit.innerText = "Verificando disponibilidad en tiempo real...";
+            btnSubmit.disabled = true;
+
+            window.recibirReservaStatus = function(resultado) {
+                if (resultado === "OCUPADO") {
+                    alert("⚠️ ¡Lo sentimos! Este bloque horario acaba de ser reservado por otra clienta hace unos instantes. Por favor, selecciona otro horario o día.");
+                    btnSubmit.innerText = "Agendar Cita de Lujo vía WhatsApp";
+                    btnSubmit.disabled = false;
+                    cargarHorasOcupadas(); 
+                    return;
+                }
+
+                if (resultado === "OK") {
+                    const telefonoDestino = "56932395480";
+                    const mensajeWhatsapp = `✨ *NUEVA RESERVA VIP - BY PAULY* ✨%0A%0A` +
+                                            `👑 *Clienta:* ${encodeURIComponent(nombre)}%0A` +
+                                            `📅 *Fecha:* ${encodeURIComponent(fecha)}%0A` +
+                                            `⏰ *Bloque Elegido:* ${encodeURIComponent(bloqueSeleccionado)}%0A%0A` +
+                                            `_Los datos se guardaron con éxito en tu Excel de forma segura._`;
+                    
+                    const urlWhatsapp = `https://wa.me/${telefonoDestino}?text=${mensajeWhatsapp}`;
+                    
+                    alert("✨ ¡Tu cupo ha sido reservado con éxito en el sistema! Redirigiendo a WhatsApp para finalizar...");
+                    
+                    btnSubmit.innerText = "Agendar Cita de Lujo vía WhatsApp";
+                    btnSubmit.disabled = false;
+                    
+                    document.getElementById('form-agenda').reset();
+                    document.getElementById('placeholder-text').style.display = 'block';
+                    document.getElementById('blocks-section').style.display = 'none';
+                    
+                    cargarHorasOcupadas();
+                    window.open(urlWhatsapp, '_blank');
+                }
+            };
+
+            const scriptEnvio = document.createElement('script');
+            scriptEnvio.src = GOOGLE_SCRIPT_URL + 
+                             "?callback=recibirReservaStatus" +
+                             "&nombre=" + encodeURIComponent(nombre) +
+                             "&telefono=" + encodeURIComponent(telefono) +
+                             "&correo=" + encodeURIComponent(correo) +
+                             "&fecha=" + encodeURIComponent(fecha) +
+                             "&bloque=" + encodeURIComponent(bloqueSeleccionado) +
+                             "&_ts=" + new Date().getTime();
+            document.body.appendChild(scriptEnvio);
+        });
+
+        document.getElementById('cancel-btn').addEventListener('click', function() {
+            const codigo = document.getElementById('codigo-cancelar').value.trim();
+            const btnCancel = document.getElementById('cancel-btn');
+
+            if (!codigo) {
+                alert("Introduce el código numérico de tu reserva.");
+                return;
+            }
+
+            btnCancel.innerText = "Cancelando Cita...";
+            btnCancel.disabled = true;
+
+            window.statusCancelacion = function(res) {
+                if(res === "OK") {
+                    alert("✨ Tu cupo ha sido liberado exitosamente en el sistema.");
+                } else {
+                    alert("❌ No se encontró ninguna reserva activa con ese código.");
+                }
+                document.getElementById('codigo-cancelar').value = "";
+                btnCancel.innerText = "Cancelar Reserva Inmediatamente";
+                btnCancel.disabled = false;
+                cargarHorasOcupadas();
+            };
+
+            const scriptCancel = document.createElement('script');
+            scriptCancel.src = GOOGLE_SCRIPT_URL + "?callback=statusCancelacion&accion=cancelar&codigo=" + encodeURIComponent(codigo) + "&_ts=" + new Date().getTime();
+            document.body.appendChild(scriptCancel);
+        });
+    </script>
+</body>
+</html>
